@@ -40,7 +40,7 @@
 			          <tr>
                         <td class="text-center"><?php echo $i++ ?></td>
                         <td>
-                            <p> <?php echo date("d,M,Y H:i A",strtotime($row['date_created']))?></p>
+                            <p> <?php echo date("d,M,Y h:i A",strtotime($row['date_created']))?></p>
                         </td>
                         <td>
                             <p> <?php echo $row['id'] ?></p>

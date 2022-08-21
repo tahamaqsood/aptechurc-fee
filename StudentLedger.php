@@ -75,7 +75,7 @@ if(isset($_SESSION['name'])==null)
 			          <tr>
                         <td class="text-center"><?php echo $i++ ?></td>
                         <td>
-                            <p> <?php echo date("d,M,Y H:i A",strtotime($row['date_created']))?></p>
+                            <p> <?php echo date("d,M,Y h:i A",strtotime($row['date_created']))?></p>
                         </td>
                         <td class="text-center">
                             <p><?php echo $row['remarks'] ?></p>
