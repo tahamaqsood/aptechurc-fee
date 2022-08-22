@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clickfees_db`
+-- Database: `aptechurc_db`
 --
 
 -- --------------------------------------------------------
@@ -80,7 +80,16 @@ CREATE TABLE `payments` (
   `ef_id` int(30) NOT NULL,
   `amount` float NOT NULL,
   `remarks` text NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_created` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `FULL_NAME` varchar(50) NOT NULL,
+  `FEE_HEAD` varchar(50) NOT NULL,
+  `PAYMENT_MODE` varchar(50) NOT NULL,
+  `AMOUNT_IN_WORDS` varchar(50) NOT NULL,
+  `Month_Of_Payment` varchar(50) NOT NULL,
+  `CHEQUE_NO` varchar(50) NOT NULL,
+  `TIMINGS` varchar(50) NOT NULL,
+  `INPUTTER` varchar(50) NOT NULL,
+  `Receipt_no` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -101,11 +110,17 @@ INSERT INTO `payments` (`id`, `ef_id`, `amount`, `remarks`, `date_created`) VALU
 
 CREATE TABLE `student` (
   `id` int(30) NOT NULL,
-  `id_no` varchar(100) NOT NULL,
+  `id_no` bigint(20) NOT NULL,
   `name` text NOT NULL,
+  `father_name` varchar(40) NOT NULL,
   `contact` varchar(100) NOT NULL,
   `address` text NOT NULL,
   `email` varchar(200) NOT NULL,
+  `timings` varchar(200) NOT NULL,
+  `course` varchar(50) NOT NULL,
+  `admission_fee` bigint(20) NOT NULL,
+  `monthly_fee` bigint(20) NOT NULL,
+  `amount_in_words` varchar(200) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -129,6 +144,7 @@ CREATE TABLE `student_ef_list` (
   `ef_no` varchar(200) NOT NULL,
   `course_id` int(30) NOT NULL,
   `total_fee` float NOT NULL,
+  `AMOUNT_IN_WORDS` varchar(50) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -136,9 +152,12 @@ CREATE TABLE `student_ef_list` (
 -- Dumping data for table `student_ef_list`
 --
 
-INSERT INTO `student_ef_list` (`id`, `student_id`, `ef_no`, `course_id`, `total_fee`, `date_created`) VALUES
-(1, 1, '1', 1, 6200, '2022-05-09 22:48:20'),
-(2, 2, '2', 2, 66600, '2022-05-16 17:13:25');
+INSERT INTO `student_ef_list` (`id`, `student_id`, `ef_no`, `course_id`, `total_fee`, `AMOUNT_IN_WORDS`, `date_created`) VALUES
+(1, 1, '1', 1, 6000, 'Six Thousand Only', '2022-05-09 22:48:20'),
+(2, 2, '2', 2, 4800, 'Four Thousand & Eight Hundred Only', '2022-05-16 17:13:25'),
+(3, 3, '3', 2, 5000, 'Five Thousand Only', '2022-07-25 16:15:50'),
+(4, 4, '4', 1, 5500, 'Five Thousand & Five Hundred Only', '2022-07-25 16:15:50'),
+(5, 5, '5', 1, 6200, '', '2022-08-10 21:04:19');
 
 -- --------------------------------------------------------
 
@@ -196,13 +215,15 @@ ALTER TABLE `fees`
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `Receipt_no` (`Receipt_no`);
 
 --
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_no` (`id_no`);
 
 --
 -- Indexes for table `student_ef_list`
@@ -254,7 +275,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_ef_list`
 --
 ALTER TABLE `student_ef_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
