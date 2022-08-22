@@ -52,10 +52,17 @@ if(isset($_SESSION['name'])==null)
                 <table class="table table-bordered" id='report-list'>
                     <thead>
                     <tr>
+<<<<<<< HEAD
                             <th class="text-center">Index No</th>
                             <th class="">Date</th>
                             <th >Remarks</th>
                             <th >Receipt No</th> 
+=======
+                            <th class="text-center">#</th>
+                            <th class="">Date</th>
+                            <th >Remarks</th>
+                            <th >Receipt No.</th> 
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                             <th class="">Paid Amount</th>
                         </tr>
                     </thead>
@@ -75,7 +82,11 @@ if(isset($_SESSION['name'])==null)
 			          <tr>
                         <td class="text-center"><?php echo $i++ ?></td>
                         <td>
+<<<<<<< HEAD
                             <p> <?php echo date("d,M,Y H:i A",strtotime($row['date_created']))?></p>
+=======
+                            <p> <?php echo date("d,M,Y h:i A",strtotime($row['date_created']))?></p>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                         </td>
                         <td class="text-center">
                             <p><?php echo $row['remarks'] ?></p>

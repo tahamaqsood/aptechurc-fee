@@ -40,7 +40,11 @@
 			          <tr>
                         <td class="text-center"><?php echo $i++ ?></td>
                         <td>
+<<<<<<< HEAD
                             <p> <?php echo date("d,M,Y H:i A")?></p>
+=======
+                            <p> <?php echo date("d,M,Y h:i A",strtotime($row['date_created']))?></p>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                         </td>
                         <td>
                             <p> <?php echo $row['id'] ?></p>

@@ -1,6 +1,9 @@
 <?php 
 include('db_connect.php');
+<<<<<<< HEAD
 include('header.php');
+=======
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 session_start();
 if(isset($_GET['id'])){
 $user = $conn->query("SELECT * FROM users where id =".$_GET['id']);
@@ -9,6 +12,7 @@ foreach($user->fetch_array() as $k =>$v){
 }
 }
 ?>
+<<<<<<< HEAD
 <style>
 	button#submit {
     display: none;
@@ -46,6 +50,24 @@ foreach($user->fetch_array() as $k =>$v){
 
 
 
+=======
+<div class="container-fluid">
+	<div id="msg"></div>
+	
+	<form action="" id="manage-user">	
+		<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" class="form-control" value="<?php echo isset($meta['name']) ? $meta['name']: '' ?>" required>
+		</div>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username" class="form-control" value="<?php echo isset($meta['username']) ? $meta['username']: '' ?>" required  autocomplete="off">
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 			<?php if(isset($meta['id'])): ?>
 			<small><i>Leave this blank if you dont want to change the password.</i></small>
 		<?php endif; ?>
@@ -55,10 +77,18 @@ foreach($user->fetch_array() as $k =>$v){
 		<?php else: ?>
 		<?php if(!isset($_GET['mtype'])): ?>
 		<div class="form-group">
+<<<<<<< HEAD
 	
 		<button type="button" class="2 btn btn-danger"  style="float:right;" data-dismiss="modal">Cancel</button> 
                 
                 <input type="submit" value="Submit" class="btn btn-primary"  style="float:right; margin-right:5px;" name="BtnSave">
+=======
+			<label for="type">User Type</label>
+			<select name="type" id="type" class="custom-select">
+				<option value="2" <?php echo isset($meta['type']) && $meta['type'] == 2 ? 'selected': '' ?>>Staff</option>
+				<option value="1" <?php echo isset($meta['type']) && $meta['type'] == 1 ? 'selected': '' ?>>Admin</option>
+			</select>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 		</div>
 		<?php endif; ?>
 		<?php endif; ?>
@@ -67,6 +97,7 @@ foreach($user->fetch_array() as $k =>$v){
 	</form>
 </div>
 
+<<<<<<< HEAD
 <?php
 if(isset($_POST['BtnSave']))
 {
@@ -112,6 +143,9 @@ if(isset($_POST['BtnSave']))
 ?>
 
 <!-- <script>
+=======
+<script>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 	
 	$('#manage-user').submit(function(e){
 		e.preventDefault();
@@ -134,4 +168,8 @@ if(isset($_POST['BtnSave']))
 		})
 	})
 
+<<<<<<< HEAD
 </script> -->
+=======
+</script>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc

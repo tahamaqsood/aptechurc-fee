@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2022 at 06:29 PM
+-- Generation Time: Jun 25, 2022 at 03:24 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -96,21 +96,11 @@ CREATE TABLE `payments` (
 -- Dumping data for table `payments`
 --
 
-INSERT INTO `payments` (`id`, `ef_id`, `amount`, `remarks`, `date_created`, `FULL_NAME`, `FEE_HEAD`, `PAYMENT_MODE`, `AMOUNT_IN_WORDS`, `Month_Of_Payment`, `CHEQUE_NO`, `TIMINGS`, `INPUTTER`, `Receipt_no`) VALUES
-(1, 1, 6000, 'paid', '2022-08-20 13:34:50', 'Rameez Ali Baig', 'WEB DESIGNING', 'Cash', 'Six Thousand Only', 'January', '-', '3:00 TO 5:00 (MWF)', 'Taha Maqsood', 1),
-(2, 2, 4800, 'paid', '2022-08-20 13:35:09', 'Tayyaba Noor', 'PHP MYSQL', 'Cash', 'Four Thousand & Eight Hundred Only', 'February', '-', '11:00 TO 1:00 (TTS)', 'Taha Maqsood', 2),
-(3, 7, 6000, 'paid', '2022-09-20 13:37:07', 'Babar Azam', 'HARWARE PROFESSIONAL', 'Cash', 'Six Thousand', 'March', '-', '7:00 TO 9:00 (MWF)', 'Taha Maqsood', 3),
-(4, 7, 6000, 'paid', '2022-08-20 13:38:38', 'Babar Azam', 'HARWARE PROFESSIONAL', 'Cash', 'Six Thousand', 'February', '-', '7:00 TO 9:00 (MWF)', 'Taha Maqsood', 4),
-(5, 5, 4800, 'paid', '2022-08-20 13:56:30', 'Haider', 'HARWARE PROFESSIONAL', 'Cheque', 'Four Thousand & Eight Hundred Only', 'November', '-', '7:00 TO 9:00 (MWF)', 'Taha Maqsood', 5),
-(6, 11, 4800, 'Paid', '2022-08-20 17:59:32', 'Taha Maqsood', 'ACCP REGISTRATION', 'Cash', ' Four Thousand Eight Hundred ', 'May', '-', '11:00 TO 1:00 (TTS)', 'Taha Maqsood', 6),
-(7, 11, 4800, 'Paid', '2022-08-20 18:35:11', 'Taha Maqsood', 'ACCP REGISTRATION', 'Cash', ' Four Thousand Eight Hundred ', 'March', '-', '11:00 TO 1:00 (TTS)', 'Taha Maqsood', 7),
-(8, 1, 6000, 'Paid', '2022-08-20 18:40:51', 'Rameez Ali Baig', 'WEB DESIGNING', 'Cash', 'Six Thousand Only', 'July', '-', '3:00 TO 5:00 (MWF)', 'Taha Maqsood', 8),
-(9, 11, 4800, 'Paid', '2022-08-20 18:43:53', 'Taha Maqsood', 'ACCP REGISTRATION', 'Cash', ' Four Thousand Eight Hundred ', 'April', '-', '11:00 TO 1:00 (TTS)', 'Taha Maqsood', 9),
-(10, 9, 6000, 'fee', '2022-08-20 21:04:12', 'fatima', 'MICROSOFT.NET', 'Cash', 'Six thousand', 'October', '-', '9:00 TO 11:00 (MWF)', 'Taha Maqsood', 10),
-(11, 11, 4800, 'Tution fees', '2022-08-21 00:43:24', 'Taha Maqsood', 'ACCP REGISTRATION', 'Cash', ' Four Thousand Eight Hundred ', 'August', '-', '11:00 TO 1:00 (TTS)', 'Taha Maqsood', 11),
-(12, 12, 6000, 'Paid', '2022-08-21 17:58:46', 'Faizan Durrani', 'PYTHON', 'Cash', ' Six Thousand', 'May', '-', '5:00 TO 7:00 (MWF)', 'Luqman', 12),
-(13, 12, 6000, 'Paid', '2022-08-21 18:07:33', 'Faizan Durrani', 'PYTHON', 'Cash', ' Six Thousand', 'June', '-', '5:00 TO 7:00 (MWF)', 'Luqman', 13),
-(14, 12, 6000, 'Paid', '2022-08-21 18:10:08', 'Faizan Durrani', 'PYTHON', 'Cash', ' Six Thousand', 'June', '-', '5:00 TO 7:00 (MWF)', 'Luqman', 14);
+INSERT INTO `payments` (`id`, `ef_id`, `amount`, `remarks`, `date_created`) VALUES
+(1, 1, 5000, 'Payment through Bank Account NEFT', '2022-05-09 22:49:26'),
+(2, 1, 200, 'Phone Pe', '2022-05-09 22:50:15'),
+(3, 2, 50000, 'First Installment', '2022-05-16 17:14:08'),
+(4, 2, 10000, 'Second Installment', '2022-05-16 17:14:37');
 
 -- --------------------------------------------------------
 
@@ -138,19 +128,9 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `id_no`, `name`, `father_name`, `contact`, `address`, `email`, `timings`, `course`, `admission_fee`, `monthly_fee`, `amount_in_words`, `date_created`) VALUES
-(1, 1, 'Rameez Ali Baig', 'Ali Baig', '9090909090', 'North Nazimabad, Karachi', 'rameez@gmail.com', '3:00 TO 5:00 (MWF)', 'WEB DESIGNING', 16000, 6000, 'Six Thousand Only', '2022-05-09 22:47:02'),
-(2, 2, 'Tayyaba Noor', '-', '8090809090', 'Plot No.8, Galaxy Heights, behind Metro Mall, Shivaji Nagar, Pune', 'tayyaba@gmail.com', '11:00 TO 1:00 (TTS)', 'PHP MYSQL', 13000, 4800, 'Four Thousand & Eight Hundred Only', '2022-05-16 17:11:16'),
-(3, 3, 'Shahzaib Khan', 'Saleem Khan', '654987152', 'Basera Towers, Block 17 , Gulistan - E - Johar', 'sk@gmail.com', '11:00 TO 1:00 (MWF)', 'C++', 14000, 5000, 'Five Thousand Only', '2022-06-26 15:33:18'),
-(4, 4, 'Umer Hameed', 'Abdul Hameed', '15665785', 'Safari Sunlay Cottage House R-33, Near Safoora Chorangi\r\nSafari Sunlay Cottages', 'umeradsolution@gmail.com', '7:00 TO 9:00 (MWF)', 'AMAZON', 14000, 5500, 'Five Thousand & Five Hundred Only', '2022-06-26 15:35:08'),
-(6, 6, 'Usama Rajpoot', 'Sadiq Rajpoot', '123645', 'Gd Road, Lahore', 'usama@gmail.com', '11:00 TO 1:00 (MWF)', 'PYTHON', 12000, 6000, 'Six Thousand Only', '2022-08-12 19:51:59'),
-(7, 7, 'Babar Azam', 'Azam Khan', '6589551', 'DHA Phase 7, Karachi       ', 'babar@gmail.com', '7:00 TO 9:00 (MWF)', 'HARWARE PROFESSIONAL', 20000, 6000, 'Six Thousand', '2022-08-12 20:28:24'),
-(8, 8, 'Taha', 'Maqsood Ali', '03052236744', 'House 51, Block i, Cantt bazar, Malir Cantt, Karachi.', 'ttaha8507@gmail.com', '11:00 TO 1:00 (TTS)', 'ACCP REGISTRATION', 8000, 4800, '', '2022-08-15 21:43:37'),
-(9, 5, 'Haider', 'Bajwa', '03002115689', 'house 81, block e, cantt bazar, malir cantt, karachi', 'haiderbajwa@gmail.com', '7:00 TO 9:00 (MWF)', 'HARWARE PROFESSIONAL', 6000, 4800, 'Four Thousand & Eight Hundred Only', '2022-08-15 21:46:53'),
-(11, 9, 'fatima', 'ahemed', '1211221121', 'waffwa', 'fatima123@gmail.com', '9:00 TO 11:00 (MWF)', 'MICROSOFT.NET', 10000, 6000, 'Six thousand', '2022-08-20 12:38:11'),
-(12, 10, 'Sahil Khan', 'Khan', '7893265', 'Gulshan, Karachi', 'sahil@gmail.com', '7:00 TO 9:00 (MWF)', 'C#', 20000, 5000, ' Five Thousand', '2022-08-20 13:17:13'),
-(13, 11, 'Taha Maqsood', 'Maqsood Ali', '+92 3052236744', 'House 51, Block-i, Cantt bazar. Malir cantt karachi.', 'ttaha8507@gmail.com', '11:00 TO 1:00 (TTS)', 'ACCP REGISTRATION', 10000, 4800, ' Four Thousand Eight Hundred ', '2022-08-20 17:57:36'),
-(14, 12, 'Faizan Durrani', 'Muhammad Amjad Durrani', '197356485', 'Commander City', 'faizy@gmail.com', '5:00 TO 7:00 (MWF)', 'PYTHON', 20000, 6000, ' Six Thousand', '2022-08-21 17:57:04');
+INSERT INTO `student` (`id`, `id_no`, `name`, `contact`, `address`, `email`, `date_created`) VALUES
+(1, '1', 'Saurabh Joshi', '9090909090', 'Shivaji Nagar, Pune', 'saurabha@gmail.com', '2022-05-09 22:47:02'),
+(2, '2', 'Bhagyashree Joshi', '8090809090', 'Plot No.8, Galaxy Heights, behind Metro Mall, Shivaji Nagar, Pune', 'bhagyashree@gmail.com', '2022-05-16 17:11:16');
 
 -- --------------------------------------------------------
 
@@ -213,11 +193,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
-(1, 'Taha Maqsood', 'tahamaqsood@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 1),
-(2, 'Usman Hameed', 'usman@123', '0cc175b9c0f1b6a831c399e269772661', 1),
-(4, 'Asghar Ali', 'asghar123', '518ed29525738cebdac49c49e60ea9d3', 2),
-(5, 'Sadia', 'sadia', '518ed29525738cebdac49c49e60ea9d3', 2),
-(6, 'Luqman', 'luqman123', '9033e0e305f247c0c3c80d0c7848c8b3', 1);
+(1, 'Taha Maqsood', 'tahamaqsood@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 1);
 
 --
 -- Indexes for dumped tables
@@ -287,13 +263,13 @@ ALTER TABLE `fees`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student_ef_list`
@@ -311,7 +287,7 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,7 +1,11 @@
 
+<<<<<<< HEAD
 <?php
 include('db_connect.php');
 ?>
+=======
+
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 <div class="container-fluid">
 	
 	<div class="row">
@@ -20,6 +24,7 @@ include('db_connect.php');
 				<table class="table-striped table-bordered">
 			<thead>
 				<tr>
+<<<<<<< HEAD
 					<th class="text-center">Index No</th>
 					<th class="text-center">Name</th>
 					<th class="text-center">Username</th>
@@ -56,6 +61,35 @@ include('db_connect.php');
 				 ?>
 				 </tr>
 				
+=======
+					<th class="text-center">#</th>
+					<th class="text-center">Name</th>
+					<th class="text-center">Username</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+ 					include 'db_connect.php';
+ 					$type = array("","Admin","Staff","Alumnus/Alumna");
+ 					$users = $conn->query("SELECT * FROM users order by name asc");
+ 					$i = 1;
+ 					while($row= $users->fetch_assoc()):
+				 ?>
+				 <tr>
+				 	<td class="text-center">
+				 		<?php echo $i++ ?>
+				 	</td>
+				 	<td>
+				 		<?php echo ucwords($row['name']) ?>
+				 	</td>
+				 	
+				 	<td>
+				 		<?php echo $row['username'] ?>
+				 	</td>
+				 
+				 </tr>
+				<?php endwhile; ?>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 			</tbody>
 
 		</table>
@@ -70,9 +104,35 @@ include('db_connect.php');
 $('#new_user').click(function(){
 	uni_modal('New User','manage_user.php')
 })
+<<<<<<< HEAD
 
 function Confirmation()
 {
 	return confirm('Are you sure you want to delete this record?');
 }
+=======
+$('.edit_user').click(function(){
+	uni_modal('Edit User','manage_user.php?id='+$(this).attr('data-id'))
+})
+$('.delete_user').click(function(){
+		_conf("Are you sure to delete this user?","delete_user",[$(this).attr('data-id')])
+	})
+	function delete_user($id){
+		start_load()
+		$.ajax({
+			url:'ajax.php?action=delete_user',
+			method:'POST',
+			data:{id:$id},
+			success:function(resp){
+				if(resp==1){
+					alert_toast("Data successfully deleted",'success')
+					setTimeout(function(){
+						location.reload()
+					},1500)
+
+				}
+			}
+		})
+	}
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
 </script>

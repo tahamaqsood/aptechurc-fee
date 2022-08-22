@@ -69,6 +69,25 @@ if(isset($_SESSION['name'])==null)
                                 </div>
                             </div>
 
+<<<<<<< HEAD
+=======
+                            <div class="col-lg-4">
+                                <div class="card-box bg-green">
+                                     <div class="icon text-white">
+                                        <i class="fa fa-certificate " aria-hidden="true"></i>
+                                    </div>
+                                    <div class="inner">
+                                    <?php
+                                        $totalCourses = mysqli_query($conn,'SELECT * FROM courses');
+                                        $countCourses = mysqli_num_rows($totalCourses);
+                                        ?>
+                                        <h3> <?php echo $countCourses; ?> </h3>
+                                        <p> Total Courses</p>
+                                    </div>
+                                </div>
+                            </div>
+
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                             <!-- <div class="col-lg-4">
                                 <div class="card-box bg-orange">
                                       <div class="icon">

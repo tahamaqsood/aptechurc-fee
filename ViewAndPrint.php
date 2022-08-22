@@ -164,7 +164,11 @@ $data = mysqli_fetch_assoc($result);
                 </div>
                 <div class="col-sm-6">
                 <h6 >RECEIVING DATE</h6>
+<<<<<<< HEAD
                             <input type="text" name="date" value="<?php echo date("d,M,Y H:i A",strtotime($data['date_created'])) ?>" class="form-control" disabled required>
+=======
+                            <input type="text" name="date" value="<?php echo date("d/M/Y h:i A",strtotime($data['date_created'])) ?>" class="form-control" disabled required>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                         </div>
                         </div>
                         <div class="row">
@@ -309,7 +313,11 @@ $data = mysqli_fetch_assoc($result);
                 </div>
                 <div class="col-sm-6">
                 <h6 >RECEIVING DATE</h6>
+<<<<<<< HEAD
                             <input type="text" name="date" value="<?php echo date("d M,Y H:i A",strtotime($data['date_created'])) ?>" class="form-control" disabled required>
+=======
+                            <input type="text" name="date" value="<?php echo date("d/M/Y h:i A",strtotime($data['date_created'])) ?>" class="form-control" disabled required>
+>>>>>>> 1498833d43af9b5f09ab015f8544eac6bdbca9bc
                         </div>
                         </div>
                         <div class="row">
